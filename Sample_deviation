@@ -1,0 +1,29 @@
+public class Sample_deviation {
+public static double compute_deviation (double []s) {
+	int l=s.length;
+	double mean=0;
+	double variance=0;
+	for(int i=0;i<l;i++) {
+		mean +=s[i]/l;
+	}//get the mean referring to the sample
+	for(int i=0;i<l;i++) {
+		variance+=Math.pow(mean-s[i],2)/(l-1);
+		}//get the sample variance referring to mean
+	return Math.sqrt(variance);
+}
+
+@SuppressWarnings("null")
+public static <T> T[] conversion (T[][] T1){
+	int l1=T1.length;
+	int l2=T1[0].length;
+	T[]T2 = null;
+	for(int i=0;i<T1.length;i++) {
+		for(int j=0;j<l2;j++) {
+			for(int k=0;k<l1*l2;k++) {
+				T2[k]=T1[i][j];//using for loop to iterate the 1-D array with the size of original length*width
+			}
+		}
+	}
+	return T2;
+}
+}
